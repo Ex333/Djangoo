@@ -6,7 +6,7 @@ urlpatterns = [
     path('', home, name='home'),
     path('contact/', contact, name='contact'),
     path('about/', about, name='about'),
-    path("item/<int:id>/", item_detail, name="item_detail"),
+    path("item/<slug:slug>/", item_detail, name="item_detail"),
 ]
 
 

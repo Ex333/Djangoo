@@ -12,6 +12,6 @@ def contact(request):
 def about(request):
     return render(request, 'about.html')
 
-def item_detail(request, item_id):
-    item = get_object_or_404(Item, id=item_id)
+def item_detail(request, slug):
+    item = get_object_or_404(Item, slug=slug)
     return render(request, 'item_detail.html', {'item': item})

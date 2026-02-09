@@ -30,6 +30,7 @@ class  Item(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     image = models.ImageField(upload_to='item_images/', null=True, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='items')
+    slug = models.SlugField(max_length=100, unique=True)
 
     def __str__(self):
         return self.name
