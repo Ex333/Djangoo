@@ -3,26 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{ % block title% } To jest moja pierwsza strona internetowa { % endblock % }</title>
-</head>
-<body>
-    <nav class="navbar">
-        <!-- hete is navbar-->    
-        <a href="/">Home</a>
 
+    <title>{% block title %}My Django App{% endblock %}</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'myapp/css/main.css' %}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="{% url 'home' %}" class="navbar-logo">MySite</a>
+
+            <ul class="navbar-menu">
+                <li class="navbar-item">
+                    <a href="{% url 'home' %}" class="navbar-link">Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="{% url 'about' %}" class="navbar-link">About</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="{% url 'contact' %}" class="navbar-link">Contact</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
-    <h1> This is an h1 heading</h1>
-    <h2> This is an h2 heading</h2>
-    <h3> This is an h3 heading</h3>
-    <h4> This is an h4 heading</h4>
-    <h5> This is an h5 heading </h5>
-    <h6> This is an h6 heading </h6>
-    <br>
-    <p> This is a paragraph </p>
-    <p> This is another paragraph </p>
-    <!--THIS IS A COMMENT! HOMIE!-->
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        {% block content %}
+        {% endblock %}
+    </main>
 
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p class="footer-text">© 2026 MySite. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
