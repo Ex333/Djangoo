@@ -1,58 +1,13 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>{% block title %}My Django App{% endblock %}</title>
-
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="{% static 'myapp/css/main.css' %}">
-
-    <!-- Extra CSS per page -->
-    {% block extra_css %}{% endblock %}
+    <title>Document</title>
 </head>
-
 <body>
-
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="{% url 'home' %}" class="navbar-logo">
-                MySite<span class="logo-accent">.</span>
-            </a>
-
-            <ul class="navbar-menu">
-                <li class="navbar-item">
-                    <a href="{% url 'home' %}" class="navbar-link">Home</a>
-                </li>
-                <li class="navbar-item">
-                    <a href="{% url 'about' %}" class="navbar-link">About</a>
-                </li>
-                <li class="navbar-item">
-                    <a href="{% url 'contact' %}" class="navbar-link">Contact</a>
-                </li>
-            </ul>
-        </div>
+    <nav>
+        
     </nav>
-
-    <!-- MAIN CONTENT -->
-    <main class="main-content">
-        {% block content %}
-        <!-- Page content goes here -->
-        {% endblock %}
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p class="footer-text">
-            © {% now "Y" %} MySite. Built with Django ⚙️
-        </p>
-    </footer>
-
-    <!-- Extra JS per page -->
-    {% block extra_js %}{% endblock %}
-
 </body>
 </html>
