@@ -6,3 +6,5 @@ from .models import Post
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'published', 'updated_at')
     prepopulated_fields = {'slug': ('title',)}  # cel --> źródło slug będzie generowany na podstawie title
+    prepopulated_fields = {'slug': ('title',)}
+    
