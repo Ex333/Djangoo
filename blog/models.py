@@ -12,5 +12,9 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     excerpt = models.TextField(max_length=300)
 
+    class Meta:
+        ordering = ['-published']
+        indexes = [ models.Index(fields=['published'])]
+
     def __str__(self):
         return self.title
